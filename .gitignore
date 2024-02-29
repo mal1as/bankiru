@@ -5,3 +5,4 @@ target
 build
 mail_service/.gradle
 mail_service/build
+.postman

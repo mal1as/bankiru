@@ -1,2 +1,3 @@
-# business-logic-lab
-Business logic lab based on Banki.ru
+# bankiru
+
+Приложение копирующее некоторые бизнес-процессы с banki.ru
