@@ -1,0 +1,31 @@
+server:
+  port: 38081
+
+messaging:
+  credit_request:
+    approve:
+      queue: approve
+    reject:
+      queue: reject
+
+spring:
+  artemis:
+    mode: native
+  jms:
+    listener:
+      receive-timeout: 5
+  activemq:
+    broker_url: tcp://localhost:61616
+    user: artemis
+    password: artemis
+  mail:
+    host: smtp.mail.ru
+    port: 465
+    username: bankiru.blps@mail.ru
+    password: iuGmH49cDmjUsJ1KaSm5
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

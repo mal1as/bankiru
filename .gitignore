@@ -1,0 +1,7 @@
+.idea
+target
+*.iml
+.gradle
+build
+mail_service/.gradle
+mail_service/build

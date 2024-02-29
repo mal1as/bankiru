@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:35432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    show-sql: true
+  flyway:
+    enabled: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+secret:
+  key: eyJhbGciOiJIUzUxMiIsInR5cCI6ImVld2c0NTNuamtlckdFUmxeJiooM25qc2RpZjtydCJ9
+token:
+  expire_time: 36000000
+
+messaging:
+  artemis:
+    broker_url: tcp://localhost:61616
+    username: artemis
+    password: artemis
+  credit_request:
+    approve:
+      queue: approve
+    reject:
+      queue: reject
+
+credit_request:
+  min_rate: 0.2
+
+integration:
+  dadata:
+    token: 62a3aa12540aab0aafe3f7dbce23bffcf1fb6686
+
+server:
+  port: 38080

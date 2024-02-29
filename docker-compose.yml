@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  db:
+    image: "postgres:latest"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "${POSTGRES_OUTER_PORT}:5432"
+
+  artemis:
+    image: vromero/activemq-artemis
+    ports:
+      - "8161:8161"
+      - "61616:61616"
+      - "1883:1883"
+    environment:
+      - ARTEMIS_USERNAME=artemis
+      - ARTEMIS_PASSWORD=artemis
+    volumes:
+      - ./broker.xml:/var/lib/artemis/etc/broker.xml
+
+  #  jboss:
+  #    image: jboss/wildfly:20.0.1.Final
+  #    ports:
+  #      - "38080:8080"
+  #      - "9990:9990"
+  #    environment:
+  #      - JBOSS_USERNAME=misha
+  #      - JBOSS_PASSWORD=misha
+  #    volumes:
+  #      - ./deployments:/opt/jboss/wildfly/standalone/deployments
